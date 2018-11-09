@@ -1,32 +1,18 @@
-#Array Biologi
-Biologi = []
+biologi = []
+a = 0
+jalan = True
 
-#Fungsi Tampil Data
-def data_tampil():
-    if len(Biologi) <= 0:
-        print("Data Kosong")
-    else:
-        for no in range(len(Biologi)):
-            print ("[%d] %s" % (no, Biologi[no]))
-
-def insert_data():
-    nama = input("Masukkan Nama: ")
-    
-
-print("Database Biologi")
-print("1. Input Data")
-print("2. Menampilkan Data")
-print(" 1. Berdasarkan Famili")
-print(" 2. Berdasarkan Genus")
-print("3. Edit Data")
-pilihan = int(input("Masukkan Pilihan: "))
-if pilihan == 1:
-    Nama = input("Masukkan Nama Tumbuhan: ")
-    Genus = input("Masukkan Genus: ")
-    Famili = input("Masukkan Famili: ") 
-if pilihan == 2:
-    data_tampil()
-if pilihan == 3:
-    print("OK")
-else:
-    print("Masukkan Salah")
+while(jalan):
+    tanya = input("Apakah ingin menginput data? (y/t): ")
+    if(tanya == "y"):
+        data_biologi = input ("Input nama genus dan spesies tanaman ke-{}: ".format(a))
+        biologi.append(data_biologi)
+        a += 1
+        print ("Data yang telah tersimpan sebanyak {} tanaman".format(len(biologi)))
+        for bio in biologi:
+            print ("- {}".format(bio))
+    if(tanya == "t"):
+        tanya1 = input("Apakah ingin mencari data? (y/t): ")
+        if(tanya1 == "y"):
+            masuk = input("Masukkan nama spesies dari tanaman: ")
+            if(masuk == )
