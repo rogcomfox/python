@@ -11,8 +11,10 @@ while(jalan):
         print ("Data yang telah tersimpan sebanyak {} tanaman".format(len(biologi)))
         for bio in biologi:
             print ("- {}".format(bio))
-    if(tanya == "t"):
+    elif(tanya == "t"):
         tanya1 = input("Apakah ingin mencari data? (y/t): ")
         if(tanya1 == "y"):
             masuk = input("Masukkan nama spesies dari tanaman: ")
-            if(masuk == )
+            for masuk in biologi:
+                print("Data Ditemukan!")
+                print(masuk)
