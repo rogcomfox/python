@@ -1,28 +1,19 @@
-import matplotlib
+from time import time
+import logging
 import matplotlib.pyplot as plt
-import numpy as np
-import pandas
-import sklearn
 
-#load the data
-oecd_bli = pandas.read_csv("oecd_bli_2015.csv", thousands=',')
-gdp_per_capita = pandas.read_csv("gdp_per_capita.csv",thousands=',',delimiter='\t',encoding='latin1', na_values="n/a")
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GridSearchCV
+from sklearn.datasets import fetch_lfw_people
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
+from sklearn.decomposition import PCA
+from sklearn.svm import SVC
 
-#prepare the data
-country_stats = prepare_country_stats(oecd_bli, gdp_per_capita)
-x = np.c_[country_stats["GDP Per Capita"]]
-y = np.c_[country_stats["Life Satisfication"]]
+print(__doc__)
 
-#visualize the data
-country_stats.plot(kind='scatter', x="GDP Per Capita",  y='Life Satisfication')
-plt.show()
+#Display progress logs on out
+logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
 
-#select a linear model
-lin_reg_model = sklearn.linear_model.LinearRegression()
-
-#train the model
-lin_reg_model.fit(x, y)
-
-#Make prediction for Cyprus
-X_new = [[22857]] #Cyprus GDP Per Capita
-print(lin_reg_model.predict(X_new)) #outputs [[5.96242338]]
+#Download the data, if not already on disk and load it as numpy arrays
+lfw_people = fetch_lfw_people(min_faces_per_person=70, resize=0.4)
