@@ -1,7 +1,10 @@
-import dbm
-db = dbm.open("D:\\Projek Programmer\\Python_VSCode\\phonebook", "c")
+import mysql.connector
 
-db["ahmad"] = "08152300182"
-db["hari"] = "08762767236"
+db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password=""
+)
 
-db.sync()
+if db.is_connected():
+    print("Berhasil Tersambung")
