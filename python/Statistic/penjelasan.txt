@@ -1,0 +1,19 @@
+1. melakukan inport libray yang dibutuhkan (pandas untuk membaca data, matplotlib untuk memplot grafik, scikit learn untuk mengolah menjadi regresi linear)
+2. Membaca data menggunakan pandas menggunakan sintaks pd.read_csv
+3. Memplot data yang dibutuhkan kedalam bentuk grafik dengan menggunakan library matplotlib
+plt.scatter untuk memplot data yang dibutuhkan kedalam bentuk titik dengan warna merah
+4. kemudian menamai grafik menggunakan plt.title
+5. melakukan labeling pada sumbu x menggunakan plot.xlabel dan labeling pada sumbu y dengan plot.ylabel
+6. menset grid menjadi true dengan plt.grid
+7. menampilkan grafik dengan plt.show
+8. mengambil data pada kolom T untuk dimasukkan kedalam variabel x menggunakan df.iloc
+9. Mengambil data pada kolom BI untuk dimasukkan kedalam variabel y menggunakan df.iloc
+10. mengganti bentuk array pada array x dan y menggunakan metode reshape
+11. memanggil library linear regression dan disimpan pada variabel regresi
+12. melakukan fit data x dan y pada regr dan disimpan kedalam s
+13. melakukan prediksi data x 
+14. mencari nilai coefficient dari data
+15. Mencari nilai R Square dari data
+16. Mencari nilai Mean Squared score dari data
+17. Mencari nilai explained variance score dari data
+18. memplot hasil linear regresi dari data
